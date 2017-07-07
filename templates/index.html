@@ -1,68 +1,209 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="../static/index_style.css">
-    <style type="text/css">
-        object,embed{
-            -webkit-animation-duration:.001s;
-            -webkit-animation-name:playerInserted;
-            -ms-animation-duration:.001s;
-            -ms-animation-name:playerInserted;
-            -o-animation-duration:.001s;
-            -o-animation-name:playerInserted;
-            animation-duration:.001s;
-            animation-name:playerInserted;}
-        @-webkit-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}
-        @-ms-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}
-        @-o-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}
-        @keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crabapple</title>
+    <link rel="stylesheet" href="{% static "css/normalize.css" %}">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_0lzcx4ocd9t9ms4i.css">
+</head>
+
 <body>
-    <div class="container one_collumn sidebar-position-left page-home">
-        <header id="header" class="header">
-            <div class="header-inner">
-
-                <div class="site-meta"></div>
-                <div class="site-nav-toggle"></div>
-                <nav class="site-nav">
-                    <ul id="menu" class="menu">
-                        <li class="menu-item menu-item-home menu-item-active" style="opacity: 1; transform: translateY(0px);">
-                            <a href="index.html">
-                                <h3>Home</h3>
-                            </a>
-                        </li>
-                        <li class="menu-item menu-item-tags" style="opacity: 1; transform: translateY(0px);">
-                            <a href="index.html">
-                                <h3>Tags</h3>
-                            </a>
-                        </li>
-                        <li class="menu-item menu-item-about" style="opacity: 1; transform: translateY(0px);">
-                            <h3>About</h3>
-                        </li>
-                    </ul>
-                </nav>
-
-            </div>
-        </header>
-
-    <main id="main" class="main">
-        <div class="main-inner">
-            <div class="context-wrap">
-                <div id="context" class="context">
-                    <section id="posts" class="post-expand">
-                        <article>
-                            <h2>现在什么都没有</h2>
-                        </article>
-                    </section>
-                    <nav class="pagination">
-
-                    </nav>
-                </div>
-            </div>
+    <header>
+        <nav>
+            <ul class="nav-ul">
+                <li><a href="#">首页</a></li>
+                <li><a href="#">关于</a></li>
+                <li><a href="#">标签</a></li>
+            </ul>
+        </nav>
+        <div class="logo-wrap">
+            <img src="{% static "images/logo.jpg" %}" alt="Crabapple" class="Crabapple-logo">
         </div>
+    </header>
+    <main>
+        <aside>
+            <!--class="fixed-down "-->
+            <section id="asideBlock">
+                <a href="#" class="aside-title-block">关于我</a>
+                <img src="{% static "images/aboutme.jpg" %}" alt="关于我" class="about-me-img">
+                <p class="about-me-txt">从0开始组织自己的思维比理解别人的思维要简单的多，如果自己怀着畏惧的心情去学习编程和感受编程的话，那么编程无疑是痛苦的，是一种煎熬，但是如果自己是热爱编程的话，每理解别人一段代码就欢欣雀跃。</p>
+                <a href="#" class="aside-title-block">订阅 & 关注</a>
+                <div class="share-out">
+                    <a class="iconfont icon-tian7_facebook" href="#"></a>
+                    <a class="iconfont icon-twitter3" href="#"></a>
+                    <a class="iconfont icon-youtube" href="#"></a>
+                    <a class="iconfont icon-in" href="#"></a>
+                    <a class="iconfont icon-pinterestpinterest30" href="#"></a>
+                </div>
+                <a href="#" class="aside-title-block">TAGS</a>
+                <div class="aside-tags">
+                    <a href="#">数据结构</a>
+                    <a href="#">SWIFT</a>
+                    <a href="#">ART</a>
+                    <a href="#">API</a>
+                    <a href="#">JAVA</a>
+                    <a href="#">HTML</a>
+                    <a href="#">LAMBDA</a>
+                </div>
+            </section>
+        </aside>
+        <section class="articles">
+            <article>
+                <p class="article-title">深入理解Java 8 Lambda（类库篇——Streams API，Collectors和并行）</p>
+                <p class="article-time">November 16, 2017</p>
+                <p class="article-preview-content">关于</br>深入理解 Java 8 Lambda（语言篇——lambda，方法引用，目标类型和默认方法）</br>
+                    深入理解 Java 8 Lambda（类库篇——Streams API，Collector 和并行）</br>深入理解 Java 8 Lambda（原理篇——Java 编译器如何处理 lambda）</br>
+                    本文是深入理解 Java 8 Lambda 系列的第二篇，主要介绍 Java 8 针对新增语言特性而新增的类库（例如 Streams API、Collectors 和并行）。</br>本文是对 Brian
+                    Goetz的State of the Lambda: Libraries Edition 一文的翻译。</br>Java SE 8 增加了新的语言特性（例如 lambda 表达式和默认方法），为此 Java
+                    SE 8 的类库也进行了很多改进，本文简要介绍了这些改进。在阅读本文前，你应该先阅读 深入浅出Java 8 Lambda（语言篇），以便对 Java SE 8 的新增特性有一个全面了解。
+                </p>
+                <div class="share-show">
+                    <a href="#" class="share-show-all">阅读全文<i class="iconfont icon-arrowright"></i></a>
+                    <span class="share-show-to">
+                        <span>分享至：</span>
+                    <a href="#" class="iconfont icon-facebookf"></a>
+                    <a href="#" class="iconfont icon-twitter"></a>
+                    <a href="#" class="iconfont icon-tumblr"></a>
+                    <a href="#" class="iconfont icon-google"></a>
+                    <a href="#" class="iconfont icon-rss"></a>
+                    </span>
+                </div>
+            </article>
+            <article>
+                <p class="article-title">深入理解Java 8 Lambda（语言篇——lambda，方法引用，目标类型和默认方法）</p>
+                <p class="article-time">November 16, 2017</p>
+                <p class="article-preview-content">关于</br>深入理解 Java 8 Lambda（语言篇——lambda，方法引用，目标类型和默认方法）</br>
+                    深入理解 Java 8 Lambda（类库篇——Streams API，Collector 和并行）</br>深入理解 Java 8 Lambda（原理篇——Java 编译器如何处理 lambda）</br>
+                    本文是深入理解 Java 8 Lambda 系列的第二篇，主要介绍 Java 8 针对新增语言特性而新增的类库（例如 Streams API、Collectors 和并行）。</br>本文是对 Brian
+                    Goetz的State of the Lambda: Libraries Edition 一文的翻译。</br>Java SE 8 增加了新的语言特性（例如 lambda 表达式和默认方法），为此 Java
+                    SE 8 的类库也进行了很多改进，本文简要介绍了这些改进。在阅读本文前，你应该先阅读 深入浅出Java 8 Lambda（语言篇），以便对 Java SE 8 的新增特性有一个全面了解。
+                </p>
+                <div class="share-show">
+                    <a href="#" class="share-show-all">阅读全文<i class="iconfont icon-arrowright"></i></a>
+                    <span class="share-show-to">
+                        <span>分享至：</span>
+                    <a href="#" class="iconfont icon-facebookf"></a>
+                    <a href="#" class="iconfont icon-twitter"></a>
+                    <a href="#" class="iconfont icon-tumblr"></a>
+                    <a href="#" class="iconfont icon-google"></a>
+                    <a href="#" class="iconfont icon-rss"></a>
+                    </span>
+                </div>
+            </article>
+            <article>
+                <p class="article-title">设计中的 9 个关键状态</p>
+                <p class="article-time">November 16, 2017</p>
+                <p class="article-preview-content">关于</br>深入理解 Java 8 Lambda（语言篇——lambda，方法引用，目标类型和默认方法）</br>
+                    深入理解 Java 8 Lambda（类库篇——Streams API，Collector 和并行）</br>深入理解 Java 8 Lambda（原理篇——Java 编译器如何处理 lambda）</br>
+                    本文是深入理解 Java 8 Lambda 系列的第二篇，主要介绍 Java 8 针对新增语言特性而新增的类库（例如 Streams API、Collectors 和并行）。</br>本文是对 Brian
+                    Goetz的State of the Lambda: Libraries Edition 一文的翻译。</br>Java SE 8 增加了新的语言特性（例如 lambda 表达式和默认方法），为此 Java
+                    SE 8 的类库也进行了很多改进，本文简要介绍了这些改进。在阅读本文前，你应该先阅读 深入浅出Java 8 Lambda（语言篇），以便对 Java SE 8 的新增特性有一个全面了解。
+                </p>
+                <div class="share-show">
+                    <a href="#" class="share-show-all">阅读全文<i class="iconfont icon-arrowright"></i></a>
+                    <span class="share-show-to">
+                        <span>分享至：</span>
+                    <a href="#" class="iconfont icon-facebookf"></a>
+                    <a href="#" class="iconfont icon-twitter"></a>
+                    <a href="#" class="iconfont icon-tumblr"></a>
+                    <a href="#" class="iconfont icon-google"></a>
+                    <a href="#" class="iconfont icon-rss"></a>
+                    </span>
+                </div>
+            </article>
+            <article>
+                <p class="article-title">深入理解Java 8 Lambda（类库篇——Streams API，Collectors和并行）</p>
+                <p class="article-time">November 16, 2017</p>
+                <p class="article-preview-content">关于</br>深入理解 Java 8 Lambda（语言篇——lambda，方法引用，目标类型和默认方法）</br>
+                    深入理解 Java 8 Lambda（类库篇——Streams API，Collector 和并行）</br>深入理解 Java 8 Lambda（原理篇——Java 编译器如何处理 lambda）</br>
+                    本文是深入理解 Java 8 Lambda 系列的第二篇，主要介绍 Java 8 针对新增语言特性而新增的类库（例如 Streams API、Collectors 和并行）。</br>本文是对 Brian
+                    Goetz的State of the Lambda: Libraries Edition 一文的翻译。</br>Java SE 8 增加了新的语言特性（例如 lambda 表达式和默认方法），为此 Java
+                    SE 8 的类库也进行了很多改进，本文简要介绍了这些改进。在阅读本文前，你应该先阅读 深入浅出Java 8 Lambda（语言篇），以便对 Java SE 8 的新增特性有一个全面了解。
+                </p>
+                <div class="share-show">
+                    <a href="#" class="share-show-all">阅读全文<i class="iconfont icon-arrowright"></i></a>
+                    <span class="share-show-to">
+                        <span>分享至：</span>
+                    <a href="#" class="iconfont icon-facebookf"></a>
+                    <a href="#" class="iconfont icon-twitter"></a>
+                    <a href="#" class="iconfont icon-tumblr"></a>
+                    <a href="#" class="iconfont icon-google"></a>
+                    <a href="#" class="iconfont icon-rss"></a>
+                    </span>
+                </div>
+            </article>
+            <article>
+                <p class="article-title">深入理解Java 8 Lambda（类库篇——Streams API，Collectors和并行）</p>
+                <p class="article-time">November 16, 2017</p>
+                <p class="article-preview-content">关于</br>深入理解 Java 8 Lambda（语言篇——lambda，方法引用，目标类型和默认方法）</br>
+                    深入理解 Java 8 Lambda（类库篇——Streams API，Collector 和并行）</br>深入理解 Java 8 Lambda（原理篇——Java 编译器如何处理 lambda）</br>
+                    本文是深入理解 Java 8 Lambda 系列的第二篇，主要介绍 Java 8 针对新增语言特性而新增的类库（例如 Streams API、Collectors 和并行）。</br>本文是对 Brian
+                    Goetz的State of the Lambda: Libraries Edition 一文的翻译。</br>Java SE 8 增加了新的语言特性（例如 lambda 表达式和默认方法），为此 Java
+                    SE 8 的类库也进行了很多改进，本文简要介绍了这些改进。在阅读本文前，你应该先阅读 深入浅出Java 8 Lambda（语言篇），以便对 Java SE 8 的新增特性有一个全面了解。
+                </p>
+                <div class="share-show">
+                    <a href="#" class="share-show-all">阅读全文<i class="iconfont icon-arrowright"></i></a>
+                    <span class="share-show-to">
+                        <span>分享至：</span>
+                    <a href="#" class="iconfont icon-facebookf"></a>
+                    <a href="#" class="iconfont icon-twitter"></a>
+                    <a href="#" class="iconfont icon-tumblr"></a>
+                    <a href="#" class="iconfont icon-google"></a>
+                    <a href="#" class="iconfont icon-rss"></a>
+                    </span>
+                </div>
+            </article>
+            <article>
+                <p class="article-title">深入理解Java 8 Lambda（类库篇——Streams API，Collectors和并行）</p>
+                <p class="article-time">November 16, 2017</p>
+                <p class="article-preview-content">关于</br>深入理解 Java 8 Lambda（语言篇——lambda，方法引用，目标类型和默认方法）</br>
+                    深入理解 Java 8 Lambda（类库篇——Streams API，Collector 和并行）</br>深入理解 Java 8 Lambda（原理篇——Java 编译器如何处理 lambda）</br>
+                    本文是深入理解 Java 8 Lambda 系列的第二篇，主要介绍 Java 8 针对新增语言特性而新增的类库（例如 Streams API、Collectors 和并行）。</br>本文是对 Brian
+                    Goetz的State of the Lambda: Libraries Edition 一文的翻译。</br>Java SE 8 增加了新的语言特性（例如 lambda 表达式和默认方法），为此 Java
+                    SE 8 的类库也进行了很多改进，本文简要介绍了这些改进。在阅读本文前，你应该先阅读 深入浅出Java 8 Lambda（语言篇），以便对 Java SE 8 的新增特性有一个全面了解。
+                </p>
+                <div class="share-show">
+                    <a href="#" class="share-show-all">阅读全文<i class="iconfont icon-arrowright"></i></a>
+                    <span class="share-show-to">
+                        <span>分享至：</span>
+                    <a href="#" class="iconfont icon-facebookf"></a>
+                    <a href="#" class="iconfont icon-twitter"></a>
+                    <a href="#" class="iconfont icon-tumblr"></a>
+                    <a href="#" class="iconfont icon-google"></a>
+                    <a href="#" class="iconfont icon-rss"></a>
+                    </span>
+                </div>
+            </article>
+        </section>
+        <footer>
+            <a href="#" class="preview-page">
+                < 上一页</a>
+                    <a href="#" class="next-page">下一页 ></a>
+        </footer>
     </main>
-    <footer id="footer" class="footer"></footer>
-    </div>
+    <script>
+        var aside = document.getElementById("asideBlock");
+        var f = false;
+        window.onscroll = function () {
 
-</body></html>
+        var scrollTop = window.pageYOffset  //用于FF
+                || document.documentElement.scrollTop
+                || document.body.scrollTop
+                || 0;
+            console.log(scrollTop)
+            if (scrollTop > 300 && !f) {
+                aside.classList.add('fixed-down');
+                f = true
+            }else if (scrollTop < 300 && f) {
+                aside.classList.remove('fixed-down');
+                f = false
+            }
+        }
+    </script>
+</body>
+
+</html>

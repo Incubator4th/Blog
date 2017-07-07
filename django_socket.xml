@@ -1,8 +1,7 @@
 <uwsgi>
-    <plugins>python</plugins>
     <socket>:8001</socket>
-    <chdir>/home/blog/logs</chdir>
+    <chdir>/home/blog</chdir>
     <module>django_wsgi</module>
     <processes>4</processes>
-    <daemonize>/logs/uwsgi.log</daemonize>
+    <daemonize>uwsgi.log</daemonize>
 </uwsgi>
