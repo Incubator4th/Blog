@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% load taggit_templatetags2_tags %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crabapple</title>
+    <link rel="stylesheet" href="{% static "css/normalize.css" %}">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link rel="stylesheet" href="{% static "css/code.css" %}">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1101665_hog2y36fh5p.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="nav-ul">
+                <li><a href="/">首页</a></li>
+                <li><a href="#">关于</a></li>
+                <li><a href="#">标签</a></li>
+            </ul>
+        </nav>
+        <div class="logo-wrap">
+            <img src="{% static "images/logo.jpg" %}" alt="Crabapple" class="Crabapple-logo">
+        </div>
+    </header>
+    <main>
+        <aside>
+            <!--class="fixed-down "-->
+            <section id="asideBlock">
+                <a href="#" class="aside-title-block">关于我</a>
+                <img src="{% static "images/aboutme.jpg" %}" alt="关于我" class="about-me-img">
+                <p class="about-me-txt">一个普通程序员的普通博客</p>
+                <a href="#" class="aside-title-block">订阅 & 关注</a>
+                <div class="share-out">
+                    <a class="iconfont icon-iconfontqq" href="#"></a>
+                    <a class="iconfont icon-iconfontweixin" href="#"></a>
+                    <a class="iconfont icon-iconfontxinlang1" href="#"></a>
+                    <a class="iconfont icon-github" href="#"></a>
+                </div>
+                <a href="#" class="aside-title-block">TAGS</a>
+                {% get_taglist as tags for 'website.Article' %}
+                <div class="aside-tags">
+                    {% for tag in tags %}
+                        <a href="/tag/{{ tag }}">{{tag}} ({{tag.num_times}})</a>
+                    {% endfor %}
+                </div>
+            </section>
+        </aside>
+        <section class="articles">
+            <article>
+                {% if jsonfile %}
+                    <p class="article-title">{{ jsonfile.title }}</p>
+                    <p class="article-time">{{ jsonfile.mod_date }}</p>
+                    {% if tags%}
+                        <div class="aside-tags">
+                        {% for tag in tags %}
+                            <a href="/tag/{{ tag }}">{{ tag.name }}</a>
+                        {% endfor %}
+                        </div>
+                    {% endif %}
+                    <p class="article-preview-content">{{ jsonfile.content|safe }}</p>
+                {% endif %}
+            </article>
+        </section>
+
+    </main>
+    <script>
+        var aside = document.getElementById("asideBlock");
+        var f = false;
+        window.onscroll = function () {
+
+        var scrollTop = window.pageYOffset  //用于FF
+                || document.documentElement.scrollTop
+                || document.body.scrollTop
+                || 0;
+            console.log(scrollTop)
+            if (scrollTop > 300 && !f) {
+                aside.classList.add('fixed-down');
+                f = true
+            }else if (scrollTop < 300 && f) {
+                aside.classList.remove('fixed-down');
+                f = false
+            }
+        }
+    </script>
+</body>
+
+</html>

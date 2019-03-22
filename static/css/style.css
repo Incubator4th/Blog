@@ -82,6 +82,14 @@ main aside {
     width: 250px;
 }
 
+#asideBlock{
+    margin-left: 20px;
+    box-shadow:
+        0 1px 5px 0 rgba(0, 0, 0, 0.2),
+        0 2px 2px 0 rgba(0, 0, 0, 0.14),
+        0 3px 1px -2px rgba(0, 0, 0, 0.12);
+}
+
 .fixed-down {
     position: fixed;
     width: 250px;
@@ -106,9 +114,13 @@ main aside {
 .about-me-txt {
     font-size: 13px;
     color: #555;
-    padding-bottom: 10px;
+    padding: 10px;
 }
 
+.aside-tags{
+    padding: 5px;
+    text-align: center;
+}
 .share-out {
     background: #fff;
     display: flex;
@@ -118,13 +130,15 @@ main aside {
 }
 
 .share-out a {
-    font-size: 30px;
+    font-size: 35px;
     text-decoration: none;
     color: #565656;
     -webkit-transition: color 0.2s;
     -moz-transition: color 0.2s;
     transition: color 0.2s;
 }
+
+
 
 .share-out a:hover {
     color: #ffa834;
@@ -141,7 +155,7 @@ main aside {
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     border-radius: 30px;
-    margin: 3px 0;
+    margin: 3px 3px;
     font-size: 13px;
     color: #000;
     -webkit-transition: background 0.2s;
@@ -168,6 +182,15 @@ main aside {
 
 article {
     margin-bottom: 80px;
+    box-shadow:
+        0 1px 5px 0 rgba(0, 0, 0, 0.2),
+        0 2px 2px 0 rgba(0, 0, 0, 0.14),
+        0 3px 1px -2px rgba(0, 0, 0, 0.12);
+    padding: 10px;
+}
+#part-article {
+    max-height: 400px;
+    overflow: hidden;
 }
 
 .article-title {
@@ -188,7 +211,9 @@ article {
 }
 
 .share-show {
-    margin-top: 40px;
+    margin-top: -40px;
+    margin-bottom: 60px;
+    margin-left: 20px;
     position: relative;
 }
 
